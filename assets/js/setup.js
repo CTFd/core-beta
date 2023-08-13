@@ -10,21 +10,20 @@ Alpine.data("SetupForm", () => ({
   init() {
     // Bind Enter on any input to clicking the Next button
     this.$root.querySelectorAll("input").forEach(i => {
-        i.addEventListener("keypress", e => {
-          if (e.key == "Enter") {
-            e.preventDefault();
-            e.target.closest(".tab-pane").querySelector("button[data-href]").click();
-          }
-        });
-        i.addEventListener("change", e => {
-          if (e.target.checkValidity() === false) {
-            e.target.classList.add("input-filled-invalid");
-          } else {
-            e.target.classList.remove("input-filled-invalid");
-          }
-        });
-      }
-    );
+      i.addEventListener("keypress", e => {
+        if (e.key == "Enter") {
+          e.preventDefault();
+          e.target.closest(".tab-pane").querySelector("button[data-href]").click();
+        }
+      });
+      i.addEventListener("change", e => {
+        if (e.target.checkValidity() === false) {
+          e.target.classList.add("input-filled-invalid");
+        } else {
+          e.target.classList.remove("input-filled-invalid");
+        }
+      });
+    });
 
     // Register storage listener for MLC integration
     window.addEventListener("storage", function (event) {
