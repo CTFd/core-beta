@@ -137,15 +137,15 @@ Alpine.data("Challenge", () => ({
 
   async getShareUrl() {
     let body = {
-      "type": "solve",
-      "challenge_id": this.id,
-    }
-    const response = await CTFd.fetch("/api/v1/shares", { 
+      type: "solve",
+      challenge_id: this.id,
+    };
+    const response = await CTFd.fetch("/api/v1/shares", {
       method: "POST",
-      body: JSON.stringify(body)
+      body: JSON.stringify(body),
     });
-    const data = await response.json()
-    const url = data["data"]["url"]
+    const data = await response.json();
+    const url = data["data"]["url"];
     this.share_url = url;
   },
 
