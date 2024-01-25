@@ -20,7 +20,7 @@ Alpine.data("ScoreboardDetail", () => ({
 Alpine.data("ScoreboardList", () => ({
   standings: null,
   brackets: [],
-  activeBracket : null,
+  activeBracket: null,
 
   async init() {
     let response = await CTFd.fetch(`/api/v1/brackets?type=${CTFd.config.userMode}`, {
@@ -29,7 +29,7 @@ Alpine.data("ScoreboardList", () => ({
     const body = await response.json();
     this.brackets = body["data"];
     this.full_standings = this.standings = await CTFd.pages.scoreboard.getScoreboard();
-  }
-}))
+  },
+}));
 
 Alpine.start();
