@@ -6,7 +6,8 @@
     "dev": "vite build --watch",
     "build": "vite build",
     "format": "prettier --write assets/",
-    "lint": "prettier --check assets/"
+    "lint": "prettier --check assets/",
+    "verify": "vite build; git diff --quiet --exit-code"
   },
   "dependencies": {
     "@ctfdio/ctfd-js": "^0.0.12",
