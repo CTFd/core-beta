@@ -17,8 +17,6 @@
 @use "includes/icons/award-icons";
 @use "includes/icons/flag-icons";
 
-$theme-color: #f22c54;
-
 body {
   color: #c9c9c9;
   background-color: #1f1f1f;
@@ -114,6 +112,19 @@ select {
     border-color 0.3s;
 }
 
+.btn-primary{
+  background-color: #f22c54cb;
+  border-color: #f22c54cb;
+}
+
+.btn-primary:hover {
+  background-color: #9e253f;
+  border-color: #9e253f;
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 .25rem #701427cb;
+}
 
 .scanlines {
   position:fixed;
