@@ -124,6 +124,15 @@ select {
   box-shadow: 0 0 0 .25rem #701427cb;
 }
 
+.nav-link {
+  color: #f22c54cb;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #f22c54cb;
+  color: #fff;
+}
+
 .scanlines {
   position:fixed;
   pointer-events: none;
