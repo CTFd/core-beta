@@ -20,6 +20,23 @@
       background-color: #37d63e;
     }
   }
+  
+.challenge-button {
+  box-shadow: 3px 3px 3px #6e193c;
+  background-color: #6e192a;
+  border-radius: 0;
+}
+
+.challenge-name{
+  text-shadow: none;
+}
+
+.challenge-button:hover {
+  background-color: #962239;
+}
+
+.challenge-submit {
+  border-radius: 0;
 }
 
 [data-bs-theme="dark"] .challenge-button {
@@ -37,4 +54,22 @@
       background-color: #37d63e;
     }
   }
+}
+
+.modal-content {
+  border-radius: 0;
+  background-color: #1e1e1e;
+  color: #aaa;
+}
+
+.nav-tabs .nav-link {
+  border-radius: 0;
+}
+
+.btn-close {
+  color: #aaa;
+}
+
+.challenge-solves {
+  color: #aaa;
 }

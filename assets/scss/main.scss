@@ -17,13 +17,22 @@
 @use "includes/icons/award-icons";
 @use "includes/icons/flag-icons";
 
+$theme-color: #f22c54;
+
+body {
+  color: #c9c9c9;
+  background-color: #1f1f1f;
+}
+
 h1,
 h2 {
   font-weight: 500;
   letter-spacing: 2px;
+  text-shadow: 0 3px 0 #f22c54cb;
 }
 
 a {
+  color: #fff;
   text-decoration: none !important;
 }
 
@@ -52,4 +61,162 @@ select {
 .form-select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e");
   background-size: 8px 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navbar-brand {
+  font-family: "Press Start 2P", cursive;
+  text-shadow: 0 3px 0 rgba(255, 105, 246, 0.8);
+}
+
+// HMM
+
+.input-filled-valid {
+  background-color: transparent !important;
+  border-color: #a3d39c;
+  box-shadow: 0 0 0 0.1rem #a3d39c;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.input-filled-invalid {
+  background-color: transparent !important;
+  border-color: #d46767;
+  box-shadow: 0 0 0 0.1rem #d46767;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.form-control {
+  background: transparent;
+  border: 1px dashed #ced4da;
+  border-radius: 0;
+  padding: 0.8em !important;
+  color: #aaa;
+  /* Behavior changed in Bootstrap v4.1.3. See https://github.com/twbs/bootstrap/issues/27629 */
+  height: auto !important;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: #a3d39c;
+  box-shadow: 0 0 0 0.1rem #a3d39c;
+  color: #fff;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+
+.scanlines {
+  position:fixed;
+  pointer-events: none;
+  width: auto;
+  min-width: 100%;
+  height:100%;
+  z-index: 5;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.08) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+}
+
+.flicker {
+  pointer-events: none;
+  position: fixed;
+  width: auto;
+  min-width: 100%;
+  height:100%;
+  z-index:15;
+  background: rgba(9, 8, 8, 0.1);
+  animation: flicker 0.3301s infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.119;
+  }
+  5% {
+    opacity: 0.02841;
+  }
+  10% {
+    opacity: 0.35748;
+  }
+  15% {
+    opacity: 0.88852;
+  }
+  20% {
+    opacity: 0.9408;
+  }
+  25% {
+    opacity: 0.35088;
+  }
+  30% {
+    opacity: 0.22426;
+  }
+  35% {
+    opacity: 0.26418;
+  }
+  40% {
+    opacity: 0.09249;
+  }
+  45% {
+    opacity: 0.35312;
+  }
+  50% {
+    opacity: 0.89436;
+  }
+  55% {
+    opacity: 0.9574;
+  }
+  60% {
+    opacity: 0.19754;
+  }
+  65% {
+    opacity: 0.05086;
+  }
+  70% {
+    opacity: 0.12137;
+  }
+  75% {
+    opacity: 0.75791;
+  }
+  80% {
+    opacity: 0.89617;
+  }
+  85% {
+    opacity: 0.90183;
+  }
+  90% {
+    opacity: 0.20657;
+  }
+  95% {
+    opacity: 0.64125;
+  }
+  100% {
+    opacity: 0.78042;
+  }
+}
+
+.scanline {
+  position:fixed;
+  pointer-events: none;
+  top:0%;
+  width: auto;
+  min-width: 100%;
+  height: 2px;
+  z-index: 10;
+  background: rgba(0, 0, 0, .3);
+  opacity: 0.75;
+  animation: scanline 7.77s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    top:99%;
+  }
 }
