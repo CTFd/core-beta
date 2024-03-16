@@ -8,12 +8,14 @@ window.CTFd = CTFd;
 
 Alpine.data("ScoreboardDetail", () => ({
   data: {},
+  show: true,
 
   async init() {
     this.data = await CTFd.pages.scoreboard.getScoreboardDetail(10);
 
     let option = getOption(CTFd.config.userMode, this.data);
     embed(this.$refs.scoregraph, option);
+    this.show = Object.keys(this.data).length > 0;
   },
 }));
 
