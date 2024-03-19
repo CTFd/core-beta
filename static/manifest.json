@@ -38,7 +38,7 @@
     ]
   },
   "assets/js/scoreboard.js": {
-    "file": "assets/scoreboard.eecf07d0.js",
+    "file": "assets/scoreboard.ffe44295.js",
     "src": "assets/js/scoreboard.js",
     "isEntry": true,
     "imports": [
@@ -140,7 +140,7 @@
     ]
   },
   "assets/scss/main.scss": {
-    "file": "assets/main.63991f7d.css",
+    "file": "assets/main.3095e2ea.css",
     "src": "assets/scss/main.scss",
     "isEntry": true
   }
