@@ -11,24 +11,20 @@
 
 [data-bs-theme="light"] .challenge-button {
   border: none;
-  box-shadow: 0 0 15px var(--bs-secondary);
+  box-shadow: 3px 3px 3px var(--bs-secondary);
 
   &.challenge-solved {
-    background-color: #29c830;
+    background-color: #6e192a;
 
     &:hover {
-      background-color: #37d63e;
+      background-color: #962239;
     }
   }
   
-.challenge-button {
-  box-shadow: 3px 3px 3px #6e193c;
-  background-color: #6e192a;
+.challenge-tag {
+  background-color: #f22c54;
+  color: #fff;
   border-radius: 0;
-}
-
-.challenge-button:hover {
-  background-color: #962239;
 }
 
 .challenge-submit {
@@ -44,10 +40,10 @@
   }
 
   &.challenge-solved {
-    background-color: #29c830;
+    background-color: #6e192a;
 
     &:hover {
-      background-color: #37d63e;
+      background-color: #962239;
     }
   }
 }
