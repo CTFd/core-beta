@@ -69,7 +69,7 @@
           {% if is_admin() %}
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('admin.view') }}">
-                <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Admin Panel">
+                <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans %}Admin Panel{% endtrans %}">
                     <i class="fas fa-wrench d-none d-md-inline d-lg-none"></i>
                 </span>
                 <span class="d-sm-inline d-md-none d-lg-inline">
@@ -82,7 +82,7 @@
 
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('views.notifications') }}">
-              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notifications">
+              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans %}Notifications{% endtrans %}">
                 <i class="fas fa-bell d-none d-md-inline d-lg-none"></i>
               </span>
               <span class="d-sm-inline d-md-none d-lg-inline">
@@ -96,7 +96,7 @@
           {% if Configs.user_mode == "teams" %}
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('teams.private') }}">
-                <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Team">
+                <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans %}Team{% endtrans %}">
                   <i class="fas fa-users d-none d-md-inline d-lg-none"></i>
                 </span>
                 <span class="d-sm-inline d-md-none d-lg-inline">
@@ -109,7 +109,7 @@
 
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('users.private') }}">
-              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile">
+              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans %}Profile{% endtrans %}">
                 <i class="fas fa-user-circle d-none d-md-inline d-lg-none"></i>
               </span>
               <span class="d-sm-inline d-md-none d-lg-inline">
@@ -121,7 +121,7 @@
 
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('views.settings') }}">
-              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Settings">
+              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans %}Settings{% endtrans %}">
                 <i class="fas fa-cogs d-none d-md-inline d-lg-none"></i>
               </span>
               <span class="d-sm-inline d-md-none d-lg-inline">
@@ -133,7 +133,7 @@
 
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('auth.logout') }}">
-              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Logout">
+              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans %}Logout{% endtrans %}">
                 <i class="fas fa-sign-out-alt d-none d-md-inline d-lg-none"></i>
               </span>
               <span class="d-sm-inline d-md-none d-lg-inline">
@@ -148,7 +148,7 @@
           {% if registration_visible() %}
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('auth.register') }}">
-                <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Register">
+                <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans %}Register{% endtrans %}">
                   <i class="fas fa-user-plus d-none d-md-inline d-lg-none"></i>
                 </span>
                 <span class="d-sm-inline d-md-none d-lg-inline">
@@ -161,7 +161,7 @@
 
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('auth.login') }}">
-              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Login">
+              <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans %}Login{% endtrans %}">
                 <i class="fas fa-sign-in-alt d-none d-md-inline d-lg-none"></i>
               </span>
               <span class="d-sm-inline d-md-none d-lg-inline">
