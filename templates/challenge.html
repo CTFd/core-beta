@@ -149,12 +149,12 @@
             <div class="row notification-row">
               <div class="col-12">
                 <template x-if="response">
-                  {# This alert is re-used for all alerts, so it's important not to make it dismissble #}
-                  <div
+                  {# This alert is re-used for all alerts, so it's important not to make it dismissible #}
+                  <div class="alert text-center w-100 mt-3"
                       :class="{
-                        'alert text-center w-100 mt-3 alert-success': response.data.status == 'correct',
-                        'alert text-center w-100 mt-3 alert-info': response.data.status == 'already_solved',
-                        'alert text-center w-100 mt-3 alert-danger': response.data.status == 'incorrect',
+                        'alert-success': response.data.status == 'correct',
+                        'alert-info': response.data.status == 'already_solved',
+                        'alert-danger': response.data.status == 'incorrect',
                       }" role="alert"
                   >
                     <strong x-text="response.data.message"></strong>
