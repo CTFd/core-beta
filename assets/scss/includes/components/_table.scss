@@ -7,12 +7,6 @@
   text-align: center !important;
 }
 
-// Vertically center text in cells
-.table td,
-th {
-  vertical-align: middle !important;
-}
-
 // Add some default spacing
 .table > tbody > tr > td {
   padding: 0.8rem 1rem !important;
