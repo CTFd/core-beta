@@ -8,4 +8,4 @@ export function mergeObjects(target, source) {
   // Join `target` and modified `source`
   Object.assign(target || {}, source);
   return target;
-};
+}

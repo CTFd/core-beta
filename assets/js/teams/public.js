@@ -70,7 +70,7 @@ Alpine.data("TeamGraphs", () => ({
         window.TEAM.name,
         this.solves.data,
         this.awards.data,
-        optionMerge
+        optionMerge,
       ),
     );
   },
