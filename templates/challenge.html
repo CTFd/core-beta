@@ -159,6 +159,7 @@
                         'alert-success': response.data.status == 'correct',
                         'alert-info': response.data.status == 'already_solved',
                         'alert-danger': response.data.status == 'incorrect',
+                        'alert-warning': response.data.status == 'paused',
                       }" role="alert"
                   >
                     <strong x-text="response.data.message"></strong>
