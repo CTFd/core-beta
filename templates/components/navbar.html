@@ -171,6 +171,26 @@
             </a>
           </li>
         {% endif %}
+
+        <li class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-language d-none d-md-inline"></i>
+            <span class="d-sm-inline d-md-none">
+              <i class="fas fa-language pe-1"></i>
+              {% trans %}Change language{% endtrans %}
+            </span>
+          </button>
+          {%- with form = Forms.lang.LanguageForm(language=get_locale()) %}
+          <form id="language-switch">
+            <ul class="dropdown-menu dropdown-menu-end">
+              {%- for subfield in form.language %}
+              <li>{{ subfield(class="btn-check") }}{{ subfield.label(class="dropdown-item") }}</li>
+              {%- endfor %}
+            </ul>
+          </form>
+          {%- endwith %}
+        </li>
+
         <li class="nav-item">
           <button class="nav-link theme-switch" type="button">
             <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans %}Toggle theme{% endtrans %}">
