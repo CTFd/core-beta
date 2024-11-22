@@ -180,7 +180,7 @@
               {% trans %}Change language{% endtrans %}
             </span>
           </button>
-          {%- with form = Forms.lang.LanguageForm(language=get_locale()) %}
+          {%- with form = Forms.language.LanguageForm(language=get_locale()) %}
           <form id="language-switch">
             <ul class="dropdown-menu dropdown-menu-end">
               {%- for subfield in form.language %}
