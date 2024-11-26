@@ -6,7 +6,6 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 import times from "./theme/times";
 import styles from "./theme/styles";
 import highlight from "./theme/highlight";
-import languageSwitch from "./theme/languageSwitch";
 
 import alerts from "./utils/alerts";
 import tooltips from "./utils/tooltips";
@@ -16,6 +15,8 @@ import eventAlerts from "./utils/notifications/alerts";
 import eventToasts from "./utils/notifications/toasts";
 import eventRead from "./utils/notifications/read";
 
+import "./components/language";
+
 dayjs.extend(advancedFormat);
 CTFd.init(window.init);
 
@@ -23,7 +24,6 @@ CTFd.init(window.init);
   styles();
   times();
   highlight();
-  languageSwitch();
 
   alerts();
   tooltips();
