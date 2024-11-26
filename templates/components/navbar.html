@@ -180,18 +180,18 @@
               {% trans %}Change language{% endtrans %}
             </span>
           </button>
-          {%- with form = Forms.language.LanguageForm() %}
           <form x-data="LanguageForm">
             <ul class="dropdown-menu dropdown-menu-end">
-              {%- for subfield in form.language %}
+              {% set curr_lang = get_locale() %}
+              {%- for lang in Languages.names.items() %}
               <li>
-                {{ subfield(class="btn-check", **{'@click': 'set'}) }}
-                {{ subfield.label(class="dropdown-item") }}
+                  <span class="dropdown-item {{ 'bg-primary text-white' if (curr_lang == lang[0]) }}" @click="set" value="{{ lang[0] }}">
+                    {{ lang[1] }}
+                  </span>
               </li>
               {%- endfor %}
             </ul>
           </form>
-          {%- endwith %}
         </li>
 
         <li class="nav-item">
