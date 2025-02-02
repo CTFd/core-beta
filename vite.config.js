@@ -36,6 +36,14 @@ export default defineConfig({
               dest: "static/webfonts",
             },
             {
+              src: "./node_modules/@fontsource/unifont/files/**/*400*-normal*",
+              dest: "static/webfonts"
+            },
+            {
+              src: "./node_modules/@fontsource/press-start-2p/files/**/*400*-normal*",
+              dest: "static/webfonts",
+            },
+            {
               src: "./assets/img/**",
               dest: "static/img",
             },
