@@ -148,16 +148,16 @@ select {
   background-size: 100% 2px, 3px 100%;
 }
 
-// .flicker {
-//   pointer-events: none;
-//   position: fixed;
-//   width: auto;
-//   min-width: 100%;
-//   height:100%;
-//   z-index:15;
-//   background: rgba(9, 8, 8, 0.1);
-//   animation: flicker 0.3301s infinite;
-// }
+.flicker {
+  pointer-events: none;
+  position: fixed;
+  width: auto;
+  min-width: 100%;
+  height:100%;
+  z-index:15;
+  background: rgba(9, 8, 8, 0.1);
+  animation: flicker 0.3301s infinite;
+}
 
 @keyframes flicker {
   0% {
