@@ -5,7 +5,7 @@
  * @returns {String} User preferred theme
  */
 function getPreferredTheme() {
-  return "light";
+  return "dark";
   const storedTheme = localStorage.getItem("theme");
   if (storedTheme) {
     return storedTheme;
