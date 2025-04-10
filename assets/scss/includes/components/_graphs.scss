@@ -19,3 +19,7 @@
   min-height: 400px;
   display: block;
 }
+
+#score-graph > div > canvas, .challenge-charts{
+  background-color: #fff;
+}
