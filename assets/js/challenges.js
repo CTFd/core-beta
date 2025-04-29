@@ -30,15 +30,14 @@ Alpine.data("Hint", () => ({
 
   async showHint(event) {
     if (event.target.open) {
-      let response = await CTFd.pages.challenge.loadHint(this.id);
-      let hint = response.data;
-      if (hint.content) {
-        this.html = addTargetBlank(hint.html);
-      } else {
-        let answer = await CTFd.pages.challenge.displayUnlock(this.id);
-        if (answer) {
+      let answer = await CTFd.pages.challenge.displayUnlock(this.id);
+      if (answer) {
+        let response = await CTFd.pages.challenge.loadHint(this.id);
+        let hint = response.data;
+        if (hint.content) {
+          this.html = addTargetBlank(hint.html);
+        } else {
           let unlock = await CTFd.pages.challenge.loadUnlock(this.id);
-
           if (unlock.success) {
             let response = await CTFd.pages.challenge.loadHint(this.id);
             let hint = response.data;
@@ -47,9 +46,9 @@ Alpine.data("Hint", () => ({
             event.target.open = false;
             CTFd._functions.challenge.displayUnlockError(unlock);
           }
-        } else {
-          event.target.open = false;
         }
+      } else {
+        event.target.open = false;
       }
     }
   },
