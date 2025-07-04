@@ -31,6 +31,13 @@ Alpine.data("Hint", () => ({
   async showHint(event) {
     if (event.target.open) {
       let response = await CTFd.pages.challenge.loadHint(this.id);
+
+      // Hint has some kind of prerequisite or access prevention
+      if (response.errors) {
+        event.target.open = false;
+        CTFd._functions.challenge.displayUnlockError(response);
+        return;
+      }
       let hint = response.data;
       if (hint.content) {
         this.html = addTargetBlank(hint.html);
