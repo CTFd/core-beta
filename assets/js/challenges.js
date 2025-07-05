@@ -184,7 +184,11 @@ Alpine.data("Challenge", () => ({
     }
 
     // Increment attempts counter
-    if (this.max_attempts > 0 && this.response.data.status != "already_solved") {
+    if (
+      this.max_attempts > 0 &&
+      this.response.data.status != "already_solved" &&
+      this.response.data.status != "ratelimited"
+    ) {
       this.attempts += 1;
     }
 
