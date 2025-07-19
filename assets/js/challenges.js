@@ -123,7 +123,8 @@ Alpine.data("Challenge", () => ({
   },
 
   async showSubmissions() {
-    this.submissions = await CTFd.pages.users.userSubmissions("me", this.id);
+    let response = await CTFd.pages.users.userSubmissions("me", this.id);
+    this.submissions = response.data;
     this.submissions.forEach(s => {
       s.date = dayjs(s.date).format("MMMM Do, h:mm:ss A");
       return s;
