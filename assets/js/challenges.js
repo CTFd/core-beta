@@ -123,12 +123,7 @@ Alpine.data("Challenge", () => ({
   },
 
   async showSubmissions() {
-    const response = await CTFd.fetch(`/api/v1/users/me/submissions?challenge_id=${this.id}`, {
-      method: "GET",
-    });
-
-    this.submissions = (await response.json()).data; // body
-
+    this.submissions = await CTFd.pages.users.userSubmissions("me", this.id);
     this.submissions.forEach(s => {
       s.date = dayjs(s.date).format("MMMM Do, h:mm:ss A");
       return s;
