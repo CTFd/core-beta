@@ -69,6 +69,8 @@ Alpine.data("Challenge", () => ({
   tab: null,
   solves: [],
   submissions: [],
+  solution_id: null,
+  solution: null,
   response: null,
   share_url: null,
   max_attempts: 0,
@@ -129,6 +131,18 @@ Alpine.data("Challenge", () => ({
       s.date = dayjs(s.date).format("MMMM Do, h:mm:ss A");
       return s;
     });
+    new Tab(this.$el).show();
+  },
+
+  getSolutionId() {
+    let data = Alpine.store("challenge").data;
+    return data.solution_id;
+  },
+
+  async showSolution() {
+    let solution_id = this.getSolutionId();
+    let response = await CTFd.pages.challenge.loadSolution(solution_id);
+    this.solution = response.content;
     new Tab(this.$el).show();
   },
 

@@ -24,6 +24,16 @@
             {% endif %}
           {% endblock %}
 
+          {% block solution %}
+            {% if challenge.solution_id %}
+            <li class="nav-item">
+              <button class="nav-link challenge-solution" data-bs-target="#solution" @click="showSolution()">
+                {% trans %}Solution{% endtrans %}
+              </button>
+            </li>
+            {% endif %}
+          {% endblock %}
+
           {% block solves %}
             <li class="nav-item">
               <button class="nav-link challenge-solves" data-bs-target="#solves" @click="showSolves()">
@@ -267,6 +277,20 @@
               </div>
             </div>
           </div>
+
+          <div role="tabpanel" class="tab-pane fade" id="solution">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="challenge-solution-content pt-3">
+                  <template x-if="solution">
+                    <div x-html="solution">
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
