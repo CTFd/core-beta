@@ -24,7 +24,7 @@ Make sure to use Merge Commits when dealing with the subtree here. For some reas
 To create a custom theme based on the core-beta one, here are the steps to follow :
 1. Clone core-beta theme locally  
 ```
-git clone https://github.com/CTFd/core-beta.git
+git clone https://github.com/CTFd/core-beta.git custom-theme
 ```
 To clarify the structure of the project, the `./assets` folder contains the uncompiled source files (the ones you can modify), while the `./static` directory contains the compiled ones. 
 
@@ -32,7 +32,7 @@ To clarify the structure of the project, the `./assets` folder contains the unco
 **Yarn** is a dependency management tool used to install and manage project packages while **[Vite](https://vite.dev/guide/)** handles the frontend tooling in CTFd by building optimized assets that are served through Flask.
 
 
-3. Run `yarn install` in the root of `core-beta` folder to install the necessary Node packages including `vite`.
+3. Run `yarn install` in the root of `custom-theme` folder to install the necessary Node packages including `vite`.
 4. - Run `yarn dev` (this will run `vite build --watch`) while developing the theme.
    - Run `yarn build` (which will run `vite build`) for a one-time build. 
 Vite allows you to preview changes instantly with hot reloading.
