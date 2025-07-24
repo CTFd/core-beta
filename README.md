@@ -26,35 +26,19 @@ To create a custom theme based on the core-beta one, here are the steps to follo
 ```
 git clone https://github.com/CTFd/core-beta.git
 ```
+To clarify the structure of the project, the `./assets` folder contains the uncompiled source files (the ones you can modify), while the `./static` directory contains the compiled ones. 
 
-2. Copy the following files/folders into a new directory `custom-theme` : 
-- `package.json`
-- `vite.config.js`
-- `assets`
-- `static`
-- `templates` 
-
-To clarify, the `./assets` folder would contain the uncompiled source files (the ones you can modify), while the `./static` directory contains the compiled ones. 
-    
-```
-mkdir custom-theme
-cd core-beta
-cp -r package.json vite.config.js assets static templates ./../custom-theme
-```
-
-3. Install [Yarn](https://classic.yarnpkg.com/en/) and [Vite](https://vite.dev/guide/) (following the official installation guides)
-**Yarn** is a dependency management tool used to install and manage project packages while **Vite** handles the frontend tooling in CTFd by building optimized assets that are served through Flask.
-    - Install Yarn following https://classic.yarnpkg.com/en/docs/install
-    - Install Vite using the appropriate method for your system (for instance `npm i vite@latest -D`, etc.)
+2. Install [Yarn](https://classic.yarnpkg.com/en/) following the official installation guides : https://classic.yarnpkg.com/en/docs/install  
+**Yarn** is a dependency management tool used to install and manage project packages while **[Vite](https://vite.dev/guide/)** handles the frontend tooling in CTFd by building optimized assets that are served through Flask.
 
 
-4. Run `npm install` in the root of `custom-theme` folder to install the necessary Node packages.
-5. - Run `yarn dev` (this will run `vite build --watch`) while developing the theme.
+3. Run `yarn install` in the root of `core-beta` folder to install the necessary Node packages including `vite`.
+4. - Run `yarn dev` (this will run `vite build --watch`) while developing the theme.
    - Run `yarn build` (which will run `vite build`) for a one-time build. 
 Vite allows you to preview changes instantly with hot reloading.
 
 
-6. Now, you can start your modifications in the `assets` folder. Each time you save, Vite will automatically recompile everything, and you can directly see the result by importing your compiled theme into a CTFd instance.   
+5. Now, you can start your modifications in the `assets` folder. Each time you save, Vite will automatically recompile everything, and you can directly see the result by importing your compiled theme into a CTFd instance.   
 (You do not need the `node_modules` folder, simply zip the theme directory without it.)
 
 *Note : core-beta theme uses Bootstrap framework for styling.*
