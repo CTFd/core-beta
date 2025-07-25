@@ -26,7 +26,7 @@
 
           {% block solution %}
             {% if challenge.solution_id %}
-            <li class="nav-item">
+            <li class="nav-item" x-show="solution_id">
               <button class="nav-link challenge-solution" data-bs-target="#solution" @click="showSolution()">
                 {% trans %}Solution{% endtrans %}
               </button>
@@ -283,7 +283,7 @@
               <div class="col-md-12">
                 <div class="challenge-solution-content pt-3">
                   <template x-if="solution">
-                    <div x-html="solution">
+                    <div x-html="solution" style="white-space: pre-wrap;">
                     </div>
                   </template>
                 </div>
