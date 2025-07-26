@@ -1,4 +1,4 @@
-<div :class="getStyles()" role="document" x-data="Challenge" x-init="id = {{ challenge.id }}; max_attempts = {{ max_attempts }}; attempts = {{ attempts }}">
+<div :class="getStyles()" role="document" x-data="Challenge" x-init="id = {{ challenge.id }}; max_attempts = {{ max_attempts }}; attempts = {{ attempts }}; solution_id = {{ challenge.solution_id }};">
   <div class="modal-content">
     <div class="modal-body py-4 px-4 px-sm-5">
 
@@ -35,13 +35,13 @@
           {% endblock %}
 
           {% block solves %}
+            {% if solves != None %}
             <li class="nav-item">
               <button class="nav-link challenge-solves" data-bs-target="#solves" @click="showSolves()">
-                {% if solves != None %}
                   {{ ngettext("%(num)d Solve", "%(num)d Solves", solves) }}
-                {% endif %}
               </button>
             </li>
+            {% endif %}
           {% endblock %}
         </ul>
       </div>
