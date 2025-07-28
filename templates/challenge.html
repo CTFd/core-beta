@@ -1,4 +1,4 @@
-<div :class="getStyles()" role="document" x-data="Challenge" x-init="id = {{ challenge.id }}; max_attempts = {{ max_attempts }}; attempts = {{ attempts }}; solution_id = {{ challenge.solution_id }};">
+<div :class="getStyles()" role="document" x-data="Challenge" x-init="id = {{ challenge.id }}; max_attempts = {{ max_attempts }}; attempts = {{ attempts }}">
   <div class="modal-content">
     <div class="modal-body py-4 px-4 px-sm-5">
 
@@ -26,7 +26,7 @@
 
           {% block solution %}
             {% if challenge.solution_id %}
-            <li class="nav-item" x-show="solution_id">
+            <li class="nav-item" x-show="getSolutionId()">
               <button class="nav-link challenge-solution" data-bs-target="#solution" @click="showSolution()">
                 {% trans %}Solution{% endtrans %}
               </button>
