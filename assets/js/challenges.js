@@ -141,9 +141,11 @@ Alpine.data("Challenge", () => ({
 
   async showSolution() {
     let solution_id = this.getSolutionId();
-    let response = await CTFd.pages.challenge.loadSolution(solution_id);
-    this.solution = response.html;
-    new Tab(this.$el).show();
+    CTFd._functions.challenge.displaySolution = (solution) => {
+      this.solution = solution.html;
+      new Tab(this.$el).show();
+    }
+    await CTFd.pages.challenge.displaySolution(solution_id);
   },
 
   getNextId() {
