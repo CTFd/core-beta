@@ -32,7 +32,7 @@
               <b>{{ form.name.label(class="form-label") }}</b>
               {{ form.name(class="form-control", value=name, autocomplete="username") }}
               <small class="form-text text-muted">
-                {% trans %}Your username on the site{% endtrans %}
+                {{ form.name.description }}
               </small>
             </div>
 
@@ -40,7 +40,7 @@
               <b>{{ form.email.label(class="form-label") }}</b>
               {{ form.email(class="form-control", value=email, autocomplete="email") }}
               <small class="form-text text-muted">
-                {% trans %}Never shown to the public{% endtrans %}
+                {{ form.email.description }}
               </small>
             </div>
 
@@ -48,7 +48,7 @@
               <b>{{ form.password.label(class="form-label") }}</b>
               {{ form.password(class="form-control", value=password, autocomplete="new-password") }}
               <small class="form-text text-muted">
-                {% trans %}Password used to log into your account{% endtrans %}
+                {{ form.password.description }}
               </small>
             </div>
 
