@@ -8,7 +8,7 @@
 >
   <small>
     <strong>Email Unconfirmed</strong><br>
-    <span>To have the confirmation email resent please <a href="{{ url_for('auth.confirm') }}">click here</a>.</span>
+    <span>To confirm your email address please <a href="{{ url_for('auth.confirm', flow='init') }}">click here</a>.</span>
   </small>
   <button type="button" class="btn-close" @click="localStorage.setItem('remind_email_verify', window.init.userId); $el.parentElement.style.display = 'none';" aria-label="Close"></button>
 </div>
