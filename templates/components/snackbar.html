@@ -1,3 +1,4 @@
+{% if can_send_mail() %}
 <div 
     x-data 
     x-show="window.init.userId && !window.init.userVerified && localStorage.getItem('remind_email_verify') != window.init.userId && (!['/team', '/teams/join', '/teams/new'].includes(window.location.pathname) || window.init.teamId != null)"
@@ -11,3 +12,4 @@
   </small>
   <button type="button" class="btn-close" @click="localStorage.setItem('remind_email_verify', window.init.userId); $el.parentElement.style.display = 'none';" aria-label="Close"></button>
 </div>
+{% endif %}
