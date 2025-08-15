@@ -225,20 +225,13 @@ Alpine.data("Challenge", () => ({
     this.$dispatch("load-challenges");
   },
 
-  async submitRating(stars) {
-    const response = await CTFd.fetch(`/api/v1/challenges/${this.id}/ratings`, {
-      method: "PUT",
-      body: JSON.stringify({ value: stars }),
-    });
-    
-    const data = await response.json();
-    
-    if (data.success) {
-      this.rating = stars;
+  async submitRating(rating) {
+    const response = await CTFd.pages.challenge.submitRating(this.id, rating);
+    if (response.value) {
+      this.rating = rating;
       this.submitted = true;
     } else {
-      const errorMessage = data.errors[""] || data.errors.value || ["Unknown error"];
-      alert("Error submitting rating: " + errorMessage[0]);
+      alert("Error submitting rating");
     }
   },
 }));
