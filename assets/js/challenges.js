@@ -74,6 +74,9 @@ Alpine.data("Challenge", () => ({
   share_url: null,
   max_attempts: 0,
   attempts: 0,
+  rating: 0,
+  hoveredRating: 0,
+  submitted: false,
 
   async init() {
     highlight();
@@ -220,6 +223,23 @@ Alpine.data("Challenge", () => ({
 
     // Dispatch load-challenges event to call loadChallenges in the ChallengeBoard
     this.$dispatch("load-challenges");
+  },
+
+  async submitRating(stars) {
+    const response = await CTFd.fetch(`/api/v1/challenges/${this.id}/ratings`, {
+      method: "PUT",
+      body: JSON.stringify({ value: stars }),
+    });
+    
+    const data = await response.json();
+    
+    if (data.success) {
+      this.rating = stars;
+      this.submitted = true;
+    } else {
+      const errorMessage = data.errors[""] || data.errors.value || ["Unknown error"];
+      alert("Error submitting rating: " + errorMessage[0]);
+    }
   },
 }));
 
