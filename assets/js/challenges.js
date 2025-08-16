@@ -78,7 +78,7 @@ Alpine.data("Challenge", () => ({
   hoveredRating: 0,
   selectedRating: 0,
   ratingReview: "",
-  submitted: false,
+  ratingSubmitted: false,
 
   async init() {
     highlight();
@@ -235,7 +235,7 @@ Alpine.data("Challenge", () => ({
     );
     if (response.value) {
       this.ratingValue = this.selectedRating;
-      this.submitted = true;
+      this.ratingSubmitted = true;
     } else {
       alert("Error submitting rating");
     }
