@@ -74,8 +74,10 @@ Alpine.data("Challenge", () => ({
   share_url: null,
   max_attempts: 0,
   attempts: 0,
-  rating: 0,
+  ratingValue: 0,
   hoveredRating: 0,
+  selectedRating: 0,
+  ratingReview: "",
   submitted: false,
 
   async init() {
@@ -225,10 +227,14 @@ Alpine.data("Challenge", () => ({
     this.$dispatch("load-challenges");
   },
 
-  async submitRating(rating) {
-    const response = await CTFd.pages.challenge.submitRating(this.id, rating);
+  async submitRating() {
+    const response = await CTFd.pages.challenge.submitRating(
+      this.id,
+      this.selectedRating,
+      this.ratingReview,
+    );
     if (response.value) {
-      this.rating = rating;
+      this.ratingValue = this.selectedRating;
       this.submitted = true;
     } else {
       alert("Error submitting rating");
