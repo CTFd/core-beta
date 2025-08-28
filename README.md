@@ -1,5 +1,7 @@
 # core-beta
 
+> This repository was a temporary repository for development of a new version of the core theme. It has now been merged into the main CTFd repo (https://github.com/CTFd/CTFd/tree/master/CTFd/themes/core). Any further changes should be directed to the main CTFd repo. If you are looking for a repository containing just the theme files see https://github.com/CTFd/core-theme.
+
 Rewritten version of the CTFd core theme to use Bootstrap 5, Alpine.js, and vite to improve upon the existing CTFd theme structure. 
 
 ## Subtree Installation
